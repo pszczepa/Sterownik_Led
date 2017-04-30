@@ -1,16 +1,9 @@
-#ifndef pasek_hh
-#define pasek_hh
+#include "pasek.h"
 
-class Pasek
-{
-  int _czerwonyPin;
-  int _zielonyPin;
-  int _niebieskiPin;
+Pasek:Pasek()
+{}
 
-  bool _stan;
-
-public:
-  Pasek()
+Pasek::Pasek()
   {
     _czerwonyPin = 10 ;
     _zielonyPin = 9;
@@ -19,16 +12,16 @@ public:
     _stan = true;
   }
 
-  Pasek(int r, int g, int b) : _czerwonyPin(r), _zielonyPin(g), _niebieskiPin(b), _stan(true)
+ Pasek::Pasek(int r, int g, int b) : _czerwonyPin(r), _zielonyPin(g), _niebieskiPin(b), _stan(true)
   {}
 
   
-  void PiszNaPasek(Kolor & obj)
+void Pasek::PiszNaPasek(Kolor & obj)
   {
     PiszNaPasek(obj._czerwony, obj._zielony, obj._niebieski);
   }  
 
-  void PiszNaPasek(int r, int g, int b)
+void Pasek::PiszNaPasek(int r, int g, int b)
   {
     if(_stan)
     {
@@ -47,17 +40,17 @@ public:
     Serial.println();
   } 
 
-  bool ZwrocStan()
+bool Pasek::ZwrocStan()
   {
     return _stan;
   }
 
-  void OdwrocStan()
+void Pasek::OdwrocStan()
   {
     _stan = !_stan;
   }
 
-  void PiszStan()
+void Pasek::PiszStan()
   {
     if(!_stan)
     {
@@ -65,7 +58,7 @@ public:
     }
   }
 
-  void Fade(int czas)
+void Pasek::Fade(int czas)
   {
     int j = 255;
     int i = 0;
@@ -105,7 +98,7 @@ public:
       
   }
 
-  void Fade2(int czas)
+void Pasek::Fade2(int czas)
   {
     int r = 0;
     int g = 0;
@@ -151,7 +144,7 @@ public:
   }
 
 
-    void Fade3(int czas)
+void Pasek::Fade3(int czas)
   {
       int r = 0;
       int g = 0;
@@ -172,20 +165,11 @@ public:
       --g;
       delay(czas);
     } 
-
-    
-
-    
   }
 
-  void test1(int czas)
+void Pasek::test1(int czas)
   {
     PiszNaPasek(random(0,255),random(0,199),random(0,145));
     delay(czas);
   }
 
- 
-};
-
-
-#endif

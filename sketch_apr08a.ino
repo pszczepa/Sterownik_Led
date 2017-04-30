@@ -1,6 +1,6 @@
-#include "pasek.hh"
-#include "kolor.hh"
-#include "wejscia.hh"
+#include "pasek.h"
+#include "kolor.h"
+#include "wejscia.h"
 
 
 
@@ -58,9 +58,9 @@ void loop()
       p1.PiszNaPasek(str1[indeks]);
     }
   else
-  {
+    {
       p1.PiszNaPasek(str2[indeks]);
-  }
+    }
   
 
 }
