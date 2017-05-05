@@ -4,8 +4,6 @@
 #include "wejscia.h"
 
 
-
-
   Pasek p1;
   Wejscia w1;
   int indeks;

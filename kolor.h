@@ -3,7 +3,7 @@
 
 /*!
  *\file
- *\brief Definicja klasy Kolor
+ *\brief Plik zawierający definicję klasy Kolor
  *
  *
  *

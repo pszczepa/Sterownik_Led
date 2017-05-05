@@ -6,8 +6,6 @@ Pasek::Pasek()
     _czerwonyPin = 10 ;
     _zielonyPin = 9;
     _niebieskiPin = 11;
-
-    _stan = true;
   }
 
  Pasek::Pasek(int r, int g, int b) : _czerwonyPin(r), _zielonyPin(g), _niebieskiPin(b), _stan(true)

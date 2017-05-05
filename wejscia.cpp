@@ -45,4 +45,43 @@
   }
 
   void Wejscia::Wykryto(int tryb)
-  {}
+  {
+  	switch(tryb)
+  	{
+  		case'0':
+  			{
+  				//fun 
+  				break;
+  			}
+
+  		case'1':
+  			{
+  				//fun 
+  				break;
+  			}
+  			
+  		case'2':
+  			{
+  				//fun 
+  				break;
+  			}
+
+  		case'3':
+  			{
+  				//fun 
+  				break;
+  			}
+
+  		case'4':
+  			{
+  				//fun 
+  				break;
+  			}
+
+  		default:
+  			{
+  				//Nie ma prawa się zdazyć
+  			}	
+
+  	}
+  }

@@ -2,8 +2,8 @@
 #define pasek_h
 
  /*!
-  *\fo;e
-  *\brief Definicja klasy Pasek
+  *\file
+  *\brief Plik zawierający definicję klasy Pasek
   *
   *
   *
@@ -74,17 +74,19 @@ public:
    *
    */
   void InitSetup();
-
+  
+  /*!
+   *\brief 
+   *
+   */
   void Potencjometry();
 
+  /*!
+   *\brief Ustawia piny paska jako wyjścia, wyłowywać w funkcji Setup()
+   *
+   */
   void PotencjometryMatrix();
-  
-  bool ZwrocStan();
-  
-  void OdwrocStan();
-  
-  void PiszStan();
-  
+   
   void Fade(const int czas);
   
   void Fade2(const int czas);
