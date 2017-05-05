@@ -1,4 +1,5 @@
 #include "pasek.h"
+#include "kolory.h"
 
 Pasek::Pasek()
   {

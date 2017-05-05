@@ -1,8 +1,8 @@
 #include "kolor.h"
 #include "kolory.h"
 #include "pasek.h"
-
 #include "wejscia.h"
+
 
 
 

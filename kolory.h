@@ -1,33 +1,31 @@
 #ifndef kolory_hh
 #define kolory_hh
 
+#include "kolor.h"
 
-  Kolor zero(0,0,0);
 
-  Kolor red(255,0,0);
-  Kolor green(0,255,0);
-  Kolor blue(0,0,255);
-  Kolor violet(149,27,186);
-  Kolor pink(255,0,127);
-  Kolor aqua(51,200,255);
+  const extern Kolor zero;
 
-  Kolor r1(255,51,51);
-  Kolor y1(255,255,102);
-  Kolor g1(102,255,102);
-  Kolor a1(102,255,255);
-  Kolor b1(102,102,255);
-  Kolor gr1(192,192,192);
+  const extern Kolor red;
+  const extern Kolor green;
+  const extern Kolor blue;
+  const extern Kolor violet;
+  const extern Kolor pink27;
+  const extern Kolor aqua255;
+
+  const extern Kolor r1;
+  const extern Kolor y1;
+  const extern Kolor g1;
+  const extern Kolor a1;
+  const extern Kolor b1;
+  const extern Kolor gr1;
 
   
 
-  Kolor str1[] = {red,green,blue,violet,pink,aqua};
-  Kolor str2[] = {r1,y1,g1,a1,b1,gr1};
+  const extern Kolor str1[];
+  const extern Kolor str2[];
 
-  Kolor matrix1[3][4] = {
-  					     {green, g1, gr1,zero},
-  						 {red,r1,violet,zero},
-  						 {blue,b1,aqua,zero}
-  						};
+  const extern Kolor matrix1[3][4];
 
 
 #endif
