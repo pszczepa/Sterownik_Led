@@ -1,7 +1,6 @@
 #include "wejscia.h"
 
-Wejscia:Wejscia()
-{}
+
 
   Wejscia::Wejscia()
   {

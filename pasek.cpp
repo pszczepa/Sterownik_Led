@@ -1,7 +1,6 @@
 #include "pasek.h"
 
-Pasek:Pasek()
-{}
+
 
 Pasek::Pasek()
   {

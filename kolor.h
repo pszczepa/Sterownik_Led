@@ -21,7 +21,7 @@ struct Kolor
   int Czerwony();
 
   int Niebieski();
-  
+};
 
 
 #endif
