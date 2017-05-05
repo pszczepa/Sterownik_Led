@@ -39,6 +39,13 @@ void Pasek::PiszNaPasek(int r, int g, int b)
     Serial.println();
   } 
 
+ void Pasek::InitSetup()
+  {
+  	pinMode(_czerwonyPin, OUTPUT);
+  	pinMode(_zielonyPin, OUTPUT);
+  	pinMode(_niebieskiPin, OUTPUT);
+  }
+
 bool Pasek::ZwrocStan()
   {
     return _stan;

@@ -21,6 +21,8 @@ public:
   void PiszNaPasek(Kolor & obj);
   
   void PiszNaPasek(int r, int g, int b);
+
+  void InitSetup();
   
   bool ZwrocStan();
   

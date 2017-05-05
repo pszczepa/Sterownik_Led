@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-/* WEJSCIA */
+
 class Wejscia
 {
   int _przyciski[5] ;

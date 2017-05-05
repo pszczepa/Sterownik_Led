@@ -3,7 +3,7 @@
 #include "kolor.h"
 
 
-Kolor::Kolor(): _czerwony(0), _zielony(0), _niebieski(0), _dimmer(1)
+Kolor::Kolor(): _czerwony(0), _zielony(0), _niebieski(0), _dimmer(0)
   { }
 
 Kolor::Kolor(int c, int z, int n)
