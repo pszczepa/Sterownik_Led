@@ -1,6 +1,6 @@
 #include "Arduino.h"
 
-#include "kolor.h"
+
 
 
 Kolor::Kolor(): _czerwony(0), _zielony(0), _niebieski(0), _dimmer(0)

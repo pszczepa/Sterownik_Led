@@ -1,5 +1,5 @@
 #include "pasek.h"
-
+#include "kolory.h"
 
 
 Pasek::Pasek()
@@ -44,6 +44,59 @@ void Pasek::PiszNaPasek(int r, int g, int b)
   	pinMode(_czerwonyPin, OUTPUT);
   	pinMode(_zielonyPin, OUTPUT);
   	pinMode(_niebieskiPin, OUTPUT);
+  }
+
+  void Pasek::Potencjometry()
+  {
+  	int x  = analogRead(A1);
+  	int ind = map(x,0,1023,0,3);
+  	int y  = analogRead(A2); 
+  	int wartosc = map(y,0,1023,0,255);
+  	Serial.println(ind);
+  	Serial.println(wartosc);
+
+  	if(x < 128)
+  	{
+  		PiszNaPasek(wartosc,wartosc,0);
+  	}
+
+  	else if(x > 127 && x < 256)
+  	{
+  		PiszNaPasek(wartosc,0,0);
+  	}
+
+  	else if(x > 255 && x < 512)
+  	{
+  		PiszNaPasek(0,wartosc,0);
+  	} 
+
+  	else if(x > 511 && x < 640)
+  	{
+  		PiszNaPasek(0,0,wartosc);
+  	} 
+
+  	else if(x > 639 && x < 768)
+  	{
+  		PiszNaPasek(wartosc,0,wartosc);
+  	} 
+
+  	else 
+  	{
+  		PiszNaPasek(wartosc,wartosc,wartosc);
+  	}
+  	
+
+  }
+
+  void Pasek::PotencjometryMatrix()
+  {
+  	int x  = analogRead(A1);
+  	int xx = map(x,0,1023,0,3);
+  	int y  = analogRead(A2); 
+  	int yy = map(y,0,1023,0,4);
+
+  	PiszNaPasek(matrix1[xx][yy]);
+
   }
 
 bool Pasek::ZwrocStan()

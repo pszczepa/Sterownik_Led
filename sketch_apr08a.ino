@@ -22,11 +22,11 @@ void setup()
 
 }
    
-
+int x,xx,y,yy;
 
 void loop() 
 {
-  
+  /*
   if(digitalRead(7))
     {
       p1.PiszNaPasek(str1[indeks]);
@@ -35,8 +35,12 @@ void loop()
     {
       p1.PiszNaPasek(str2[indeks]);
     }
-  
+  */
 
+
+  p1.PotencjometryMatrix();
+
+  //p1.Potencjometry();
 }
 
 

@@ -72,6 +72,10 @@ public:
    *
    */
   void InitSetup();
+
+  void Potencjometry();
+
+  void PotencjometryMatrix();
   
   bool ZwrocStan();
   
