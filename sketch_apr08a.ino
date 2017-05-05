@@ -1,7 +1,9 @@
-#include "pasek.h"
 #include "kolor.h"
-#include "wejscia.h"
 #include "kolory.h"
+#include "pasek.h"
+
+#include "wejscia.h"
+
 
 
   Pasek p1;
@@ -22,8 +24,6 @@ void setup()
 
 }
    
-int x,xx,y,yy;
-
 void loop() 
 {
   /*
@@ -37,10 +37,16 @@ void loop()
     }
   */
 
+  if(digitalRead(7))
+  {
+    p1.PotencjometryMatrix();
+  }
+  else 
+  {
+    p1.Potencjometry(); 
+  }
 
-  p1.PotencjometryMatrix();
 
-  //p1.Potencjometry();
 }
 
 

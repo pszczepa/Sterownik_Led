@@ -47,3 +47,5 @@ Temporary Items
 .apdisk
 *.hex
 sketch_apr08a_AVR_MINI_atmega168.hex
+sketch_apr08a_AVR_MINI_atmega168.hex
+*.hex

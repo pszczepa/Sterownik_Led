@@ -13,6 +13,8 @@
 
 #include "Arduino.h"
 #include "kolor.h"
+#include "kolory.h"
+
 
  /*!
   *\brief Definicja klasy Pasek

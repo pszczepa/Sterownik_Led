@@ -11,7 +11,7 @@
  */
 
 #include "Arduino.h"
-#include "kolor.h"
+
 
 /*!
  *\brief Definicja klasy Kolor

@@ -1,6 +1,7 @@
 #ifndef kolory_hh
 #define kolory_hh
 
+
   Kolor zero(0,0,0);
 
   Kolor red(255,0,0);
