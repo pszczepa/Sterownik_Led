@@ -17,7 +17,6 @@
  *
  *
  */
-
 class Kolor
 {
   /*!
@@ -40,6 +39,7 @@ class Kolor
    */
   float  _dimmer;
 
+public:
   /*!
    *\brief Konstruktor bezparametryczny
    *

@@ -15,9 +15,9 @@ Pasek::Pasek()
   {}
 
   
-void Pasek::PiszNaPasek(Kolor & obj)
+void Pasek::PiszNaPasek(const Kolor & obj)
   {
-    PiszNaPasek(obj._czerwony, obj._zielony, obj._niebieski);
+    PiszNaPasek(obj.Czerwony(), obj.Zielony(), obj.Niebieski());
   }  
 
 void Pasek::PiszNaPasek(int r, int g, int b)
@@ -64,7 +64,7 @@ void Pasek::PiszStan()
     }
   }
 
-void Pasek::Fade(int czas)
+void Pasek::Fade(const int czas)
   {
     int j = 255;
     int i = 0;
@@ -104,7 +104,7 @@ void Pasek::Fade(int czas)
       
   }
 
-void Pasek::Fade2(int czas)
+void Pasek::Fade2(const int czas)
   {
     int r = 0;
     int g = 0;
@@ -150,7 +150,7 @@ void Pasek::Fade2(int czas)
   }
 
 
-void Pasek::Fade3(int czas)
+void Pasek::Fade3(const int czas)
   {
       int r = 0;
       int g = 0;
@@ -173,7 +173,7 @@ void Pasek::Fade3(int czas)
     } 
   }
 
-void Pasek::test1(int czas)
+void Pasek::test1(const int czas)
   {
     PiszNaPasek(random(0,255),random(0,199),random(0,145));
     delay(czas);
