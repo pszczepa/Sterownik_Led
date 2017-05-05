@@ -1,7 +1,7 @@
 #include "pasek.h"
 #include "kolor.h"
 #include "wejscia.h"
-#include "kolory.hh"
+#include "kolory.h"
 
 
   Pasek p1;
