@@ -21,8 +21,10 @@
   const Kolor str1[] = {red,green,blue,violet,pink,aqua};
   const Kolor str2[] = {r1,y1,g1,a1,b1,gr1};
 
+  const Kolor strOliwa[6] = {};
+
   const Kolor matrix1[3][4] = {
-  					     {green, g1, gr1,zero},
-  						 {red,r1,violet,zero},
-  						 {blue,b1,aqua,zero}
+  					   {green, g1, gr1 ,zero},
+  						 {red,r1,violet ,zero},
+  						 {blue,b1,aqua ,zero}
   						};

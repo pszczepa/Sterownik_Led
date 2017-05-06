@@ -25,6 +25,8 @@
   const extern Kolor str1[6];
   const extern Kolor str2[6];
 
+  const extern Kolor strOliwa[6];
+
   const extern Kolor matrix1[3][4];
 
 
