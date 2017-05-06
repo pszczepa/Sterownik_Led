@@ -58,7 +58,7 @@ void loop()
 
       if(digitalRead(7))
       {
-        p1.PiszNaPasek(strOliwa[w1.TrybW()]);
+        p1.PiszNaPasek(strOliwia[w1.TrybW()]);
       }
       else
       {

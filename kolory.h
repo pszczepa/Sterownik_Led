@@ -20,12 +20,17 @@
   const extern Kolor b1;
   const extern Kolor gr1;
 
-  
+  const extern Kolor szafirowy;
+  const extern Kolor winny;
+  const extern Kolor morski;
+  const extern Kolor oliwkowy;
+  const extern Kolor limonkowy;
+  const extern Kolor bananowy;
 
   const extern Kolor str1[6];
   const extern Kolor str2[6];
 
-  const extern Kolor strOliwa[6];
+  const extern Kolor strOliwia[6];
 
   const extern Kolor matrix1[3][4];
 

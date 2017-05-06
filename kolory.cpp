@@ -16,12 +16,25 @@
   const Kolor b1(102,102,255);
   const Kolor gr1(192,192,192);
 
-  
+  const extern Kolor szafirowy(8,37,103);
+  const extern Kolor winny(102,0,51);
+  const extern Kolor morski(0,128,128);
+  const extern Kolor oliwkowy(128,128,0);
+  const extern Kolor limonkowy(147,246,0);
+  const extern Kolor bananowy(255,255,0);
 
   const Kolor str1[] = {red,green,blue,violet,pink,aqua};
   const Kolor str2[] = {r1,y1,g1,a1,b1,gr1};
 
-  const Kolor strOliwa[6] = {};
+
+
+
+
+
+  const Kolor strOliwia[6] = {szafirowy,bananowy,morski,oliwkowy,limonkowy,winny};
+
+
+
 
   const Kolor matrix1[3][4] = {
   					   {green, g1, gr1 ,zero},
