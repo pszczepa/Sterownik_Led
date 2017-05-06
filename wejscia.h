@@ -36,9 +36,9 @@ class Wejscia
 
   int _trybZ;
 
-  const int _maxW;
+  int _maxW;
 
-  const int _maxZ;
+  int _maxZ;
 
 
 
@@ -51,6 +51,8 @@ public:
    *\brief Kostrukor inicjalizujący komórki pola _przyciski[]
    */
   Wejscia(int p1, int p2, int p3, int p4, int p5);
+
+  Wejscia(int maxz, int maxw);
 
   /*!
    *\brief Uswtawia odpowiednie piny jako wyjścia
@@ -77,7 +79,7 @@ public:
    */
   void SprawdzWszystkie( Pasek &obj);
 
-  void ObslugaTrybow(char ktory_tryb, char czynnosc);
+  void ObslugaTrybow(int ktory_tryb, int czynnosc, int przycisk);
 
   int TrybZ();
 

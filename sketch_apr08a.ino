@@ -5,7 +5,7 @@
 
 
   Pasek p1;
-  Wejscia w1;
+  Wejscia w1(4,6);
 
 void setup() 
 {
@@ -17,43 +17,62 @@ void setup()
   Serial.begin(9600);
 
   p1.PiszNaPasek(20,20,20);
-
 }
    
 void loop() 
 {
-  
 
 
-  if(!p1.Stan())
-  {
-    w1.Sprawdz(4,p1);
-    p1.PiszNaPasek(zero);
-  }
-  else
-  {
     if(analogRead(A0) < 500)            //Podałączono zewnętrzyn kontroler
     {
-      p1.PiszNaPasek(red);
-      switch(w1.TrybZ())
-        {
-
-        }
+      w1.Sprawdz(4,p1);
+      //Serial.println(w1.TrybZ());
       
+      switch(w1.TrybZ())
+      {
+          case 0 :
+            {
+              p1.Potencjometry();
+              break;
+            }
+          case 1 :
+            {
+              p1.PotencjometryMatrix();
+              break;
+            }
+          case 2 :
+            {
+              p1.PiszNaPasek(zero);
+              break;
+            }
+          case 3 : 
+            {
+              p1.PiszNaPasek(green);
+              break;
+            }
+      }      
     }
     else                                //Odłączony kontroler
     {
       w1.Sprawdz(1,p1);
-      p1.PiszNaPasek(green);
-      switch(w1.TrybW())
-        {
 
-        }
+      if(digitalRead(7))
+      {
+        p1.PiszNaPasek(str2[w1.TrybW()]);
+      }
+      else
+      {
+        p1.PiszNaPasek(str1[w1.TrybW()]);
+      }
+
     }
+    
   }
 
+  
 
-}
+
+
 
 
 

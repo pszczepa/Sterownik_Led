@@ -11,10 +11,26 @@
     _przyciski[4] = 3;
     _trybW = 0;
     _trybZ = 0;
+    _maxZ = 2;
+    _maxW = 3;
   }
 
   Wejscia::Wejscia(int p1, int p2, int p3, int p4, int p5)
    {}
+
+   Wejscia::Wejscia(int maxz, int maxw)
+   {
+   	_przyciski[0] = 7;			//Bistabilny, normalnie nie używać 
+    _przyciski[1] = 6;
+    _przyciski[2] = 5;
+    _przyciski[3] = 4;
+    _przyciski[4] = 3;
+    _trybW = 0;
+    _trybZ = 0;
+    _maxW  = maxw;
+    _maxZ  = maxz;
+
+   }
 
   void Wejscia::InitSetup()
   {
@@ -54,36 +70,36 @@
 
   void Wejscia::Wykryto(int tryb,  Pasek &obj)
   {
-  	Serial.println(tryb);
+  	//Serial.println(tryb);
   	switch(tryb)
   	{
   		case 0 :
   			{
-  				obj.PiszNaPasek(red); 
+  				//obj.PiszNaPasek(red); 
   				break;
   			}
 
   		case 1 :
   			{
-  				obj.NegujStan();
+  				ObslugaTrybow(1,1,tryb);
   				break;
   			}
   			
   		case 2 :
   			{
-  				obj.PiszNaPasek(blue);
+  			//	ObslugaTrybow(1,1,tryb);
   				break;
   			}
 
   		case 3 :
   			{
-  				obj.PiszNaPasek(green);
-  				break;
+  				
+   				break;
   			}
 
   		case 4 :
   			{
-  				obj.NegujStan();
+  				ObslugaTrybow(2,1,tryb);
   				break;
   			}
 
@@ -95,7 +111,7 @@
   	}
   }
 
-void Wejscia::SprawdzWszystkie( Pasek &obj)
+void Wejscia::SprawdzWszystkie(Pasek &obj)
   {
   	Sprawdz(0,obj);
   	Sprawdz(1,obj);
@@ -104,44 +120,46 @@ void Wejscia::SprawdzWszystkie( Pasek &obj)
   	Sprawdz(4,obj);
   }
 
-void Wejscia::ObslugaTrybow(char ktory_tryb, char czynnosc)
+void Wejscia::ObslugaTrybow(int ktory_tryb, int czynnosc, int przycisk)
   {
-  	 switch(ktory_tryb)
-  	 {
-  	 	case 'w':
-  	 		{
-  	 			if (czynnosc = 'i')
-  	 				{
-  	 					++_trybW;
-  	 				}
-  	 			else
-  	 				{
-  	 					--_trybW;
-  	 				} 				
-  	 		}
-  	 	case 'z':
-  	 		{
-  	 			if (czynnosc = 'i')
-  	 				{
-  	 					++_trybZ;
-  	 				}
-  	 			else
-  	 				{
-  	 					--_trybZ;
-  	 				} 
-  	 		}
-  	 }
+
+  	if(ktory_tryb == 1)
+  	{
+		if(czynnosc == 1)
+  		{
+  			++_trybW;
+  		}
+  		else
+  		{
+  	 		--_trybW;
+  	 	}
+  	} 				
+  	else if(ktory_tryb == 2)
+  	{
+  		if(czynnosc == 1)
+  		{
+  			++_trybZ;
+  	 	}
+  	 	else
+  	 	{
+  	 		--_trybZ;
+  	 	} 
+  	}
+
+  	_liczniki[przycisk] = 0;
+  	 
 
   	 if(_trybZ > _maxZ)
-  	 	{
-  	 		_trybZ = 0;
-  	 	}
+  	 {
+  	 	_trybZ = 0;
+  	 }
 
   	 if(_trybW > _maxW)
-  	 	{
-  	 		_trybW = 0;
-  	 	}  	 
-
+  	 {
+  		_trybW = 0;
+  	 }  	 
+  	 	
+  	 	
   }
  
 int Wejscia::TrybZ()
