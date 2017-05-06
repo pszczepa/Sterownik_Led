@@ -9,6 +9,8 @@
  */
 
 #include "Arduino.h"
+#include "kolory.h"
+#include "pasek.h"
 
 /*!
  *\brief Definicja klasy Wejscia
@@ -25,6 +27,19 @@ class Wejscia
    *\brief Pole liczników służących do wykrywania wcisnięcia przycisku
    */
   int _liczniki[5] = {0,0,0,0,0};
+
+  /*!
+   *
+   */
+
+  int _trybW;
+
+  int _trybZ;
+
+  const int _maxW;
+
+  const int _maxZ;
+
 
 
 public:
@@ -50,12 +65,23 @@ public:
   /*!
    *\brief Sprawdza stan przycisku
    */
-  void Sprawdz(int nr_przycisku);
+  void Sprawdz(int nr_przycisku,  Pasek &obj);
 
   /*!
    *\brief Podejmuje odpowiednie działanie dla wykrytego pinu
    */
-  void Wykryto(int tryb);
+  void Wykryto(int tryb,  Pasek &obj);
+
+  /*!
+   *\brief Sprawdza wszystkie wejścia cyfrowe, raczej nie używać, ale działa ok
+   */
+  void SprawdzWszystkie( Pasek &obj);
+
+  void ObslugaTrybow(char ktory_tryb, char czynnosc);
+
+  int TrybZ();
+
+  int TrybW();
     
 };
 

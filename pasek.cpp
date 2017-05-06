@@ -6,6 +6,8 @@ Pasek::Pasek()
     _czerwonyPin = 10 ;
     _zielonyPin = 9;
     _niebieskiPin = 11;
+    _stan = true;
+    
   }
 
  Pasek::Pasek(int r, int g, int b) : _czerwonyPin(r), _zielonyPin(g), _niebieskiPin(b), _stan(true)
@@ -19,16 +21,10 @@ void Pasek::PiszNaPasek(const Kolor & obj)
 
 void Pasek::PiszNaPasek(int r, int g, int b)
   {
-    if(_stan)
-    {
-      analogWrite(_zielonyPin, g);
-      analogWrite(_czerwonyPin, r);  
-      analogWrite(_niebieskiPin, b); 
-    }
-    else
-    {
-      PiszStan();
-    }
+
+    analogWrite(_zielonyPin, g);
+    analogWrite(_czerwonyPin, r);  
+    analogWrite(_niebieskiPin, b); 
 
     Serial.write(r);
     Serial.write(g);
@@ -95,23 +91,16 @@ void Pasek::PotencjometryMatrix()
 
   }
 
-bool Pasek::ZwrocStan()
-  {
-    return _stan;
-  }
 
-void Pasek::OdwrocStan()
-  {
-    _stan = !_stan;
-  }
+bool Pasek::Stan()
+{
+	return _stan;
+}
 
-void Pasek::PiszStan()
-  {
-    if(!_stan)
-    {
-      PiszNaPasek(0,0,0);
-    }
-  }
+void Pasek::NegujStan()
+{
+	_stan = !_stan;
+}
 
 void Pasek::Fade(const int czas)
   {

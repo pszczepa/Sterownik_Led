@@ -10,8 +10,8 @@
   const extern Kolor green;
   const extern Kolor blue;
   const extern Kolor violet;
-  const extern Kolor pink27;
-  const extern Kolor aqua255;
+  const extern Kolor pink;
+  const extern Kolor aqua;
 
   const extern Kolor r1;
   const extern Kolor y1;

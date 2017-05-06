@@ -86,7 +86,13 @@ public:
    *
    */
   void PotencjometryMatrix();
-   
+  
+  bool Stan();
+
+  void NegujStan();
+
+  /*NIE UŻYWAĆ I USUNĄĆ CHYBA*/
+
   void Fade(const int czas);
   
   void Fade2(const int czas);

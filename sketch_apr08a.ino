@@ -6,8 +6,6 @@
 
   Pasek p1;
   Wejscia w1;
-  int indeks;
-
 
 void setup() 
 {
@@ -18,35 +16,44 @@ void setup()
 
   Serial.begin(9600);
 
-  p1.PiszNaPasek(255,0,0);
+  p1.PiszNaPasek(20,20,20);
 
 }
    
 void loop() 
 {
-  /*
-  if(digitalRead(7))
-    {
-      p1.PiszNaPasek(str1[indeks]);
-    }
-  else
-    {
-      p1.PiszNaPasek(str2[indeks]);
-    }
-  */
+  
 
-  if(digitalRead(7))
+
+  if(!p1.Stan())
   {
-    p1.PotencjometryMatrix();
+    w1.Sprawdz(4,p1);
+    p1.PiszNaPasek(zero);
   }
-  else 
+  else
   {
-    p1.Potencjometry(); 
+    if(analogRead(A0) < 500)            //Podałączono zewnętrzyn kontroler
+    {
+      p1.PiszNaPasek(red);
+      switch(w1.TrybZ())
+        {
+
+        }
+      
+    }
+    else                                //Odłączony kontroler
+    {
+      w1.Sprawdz(1,p1);
+      p1.PiszNaPasek(green);
+      switch(w1.TrybW())
+        {
+
+        }
+    }
   }
 
 
 }
-
 
 
 
