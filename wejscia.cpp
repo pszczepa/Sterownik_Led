@@ -87,13 +87,15 @@
   			
   		case 2 :
   			{
-  			//	ObslugaTrybow(1,1,tryb);
+          obj.NegujStan();
+          _liczniki[tryb] = 0;
   				break;
   			}
 
   		case 3 :
   			{
-  				
+          obj.NegujStan();
+          _liczniki[tryb] = 0;
    				break;
   			}
 

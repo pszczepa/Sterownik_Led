@@ -31,7 +31,7 @@
 
 
 
-  const Kolor strOliwia[6] = {szafirowy,bananowy,morski,oliwkowy,limonkowy,winny};
+  const Kolor str[6] = {szafirowy,bananowy,morski,oliwkowy,limonkowy,winny};
 
 
 

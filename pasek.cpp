@@ -7,6 +7,11 @@ Pasek::Pasek()
     _zielonyPin = 9;
     _niebieskiPin = 11;
     _stan = true;
+
+    _fade_czerwony = 0;
+    _fade_niebieski = 0;
+    _fade_zielony = 0;
+    _licznik = 0;
     
   }
 
@@ -81,15 +86,14 @@ void Pasek::Potencjometry()
   }
 
 void Pasek::PotencjometryMatrix()
-  {
-  	int x  = analogRead(A1);
-  	int xx = map(x,0,1023,0,3);
-  	int y  = analogRead(A2); 
-  	int yy = map(y,0,1023,0,4);
+{
+ 	int x  = analogRead(A1);
+ 	int xx = map(x,0,1023,0,3);
+ 	int y  = analogRead(A2); 
+ 	int yy = map(y,0,1023,0,4);
 
-  	PiszNaPasek(matrix1[xx][yy]);
-
-  }
+ 	PiszNaPasek(matrix1[xx][yy]);
+}
 
 
 bool Pasek::Stan()
@@ -102,113 +106,57 @@ void Pasek::NegujStan()
 	_stan = !_stan;
 }
 
-void Pasek::Fade(const int czas)
+void Pasek::Fade()
   {
-    int j = 255;
-    int i = 0;
+    ++_licznik;
 
-
-
-    for(int i = 0; i < 255; ++i )
+    if(_licznik < 255)
     {
-    PiszNaPasek(i,0,j);
-    --j;
-    delay(czas);
+      ++_fade_czerwony;
+      PiszNaPasek(_fade_czerwony,0,0);
+    }
+    if(_licznik > 255 && _licznik < 510)
+    {
+      ++_fade_niebieski;
+      PiszNaPasek(255,0,_fade_niebieski);
     }
 
-     for(int i = 255; i > 0; --i )
+    if(_licznik > 510 && _licznik < 765)
     {
-    PiszNaPasek(j,0,i);
-    ++j;
-    --i;
-    delay(czas);
+      ++_fade_zielony;
+      PiszNaPasek(255,_fade_zielony,255);
     }
 
-  j = 255;
-    for(int i = 0; i < 255; ++i )
+    if(_licznik > 765 && _licznik < 1020)
     {
-    PiszNaPasek(j,i,0);
-    --j;
-    delay(czas);
+      --_fade_zielony;
+      --_fade_czerwony;
+      PiszNaPasek(_fade_czerwony,_fade_zielony,255);
     }
 
-    for(int i = 255; i > 0; --i )
+    if(_licznik > 1020 && _licznik < 1275)
     {
-    PiszNaPasek(0,j,i);
-    ++j;
-    --i;
-    delay(czas);
+      ++_fade_zielony;
+      PiszNaPasek(0,_fade_zielony,255);
+    }
+
+    if(_licznik > 1275 && _licznik < 1530)
+    {
+      --_fade_niebieski;
+      PiszNaPasek(0,255,_fade_niebieski);
+    }
+
+    if(_licznik > 1530 && _licznik < 1785)
+    {
+      --_fade_zielony;
+      PiszNaPasek(0,_fade_zielony,0);
+    }
+
+    if(_licznik > 1785)
+    {
+      _licznik = 0;  
     }
       
-  }
-
-void Pasek::Fade2(const int czas)
-  {
-    int r = 0;
-    int g = 0;
-    int b = 0;
-    
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,0,0);
-      ++r;
-      delay(czas);
-    }  
-
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,0);
-      ++g;
-      delay(czas);
-    }  
-
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,b);
-      --r;
-      ++b;
-      delay(czas);
-    } 
-
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,b);
-      --b;
-      delay(czas);
-    } 
-
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,b);
-      --r;
-      delay(czas);
-    } 
-
-    
-  }
-
-
-void Pasek::Fade3(const int czas)
-  {
-      int r = 0;
-      int g = 0;
-      int b = 0;
-    
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,0);
-      ++r;
-      ++g;
-      delay(czas);
-    } 
-
-    for(int i = 0; i < 255; ++i )
-    {
-      PiszNaPasek(r,g,0);
-      --r;
-      --g;
-      delay(czas);
-    } 
   }
 
 void Pasek::test1(const int czas)

@@ -30,7 +30,7 @@
   const extern Kolor str1[6];
   const extern Kolor str2[6];
 
-  const extern Kolor strOliwia[6];
+  const extern Kolor str[6];
 
   const extern Kolor matrix1[3][4];
 

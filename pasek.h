@@ -40,7 +40,35 @@ class Pasek
    */
   int _niebieskiPin;
 
+  /*!
+   *\brief Przechowuje stan
+   *
+   */
   bool _stan;
+
+  /*!
+   *\brief Przechowuje wartość koloru czerwonego dla funkcji Fade()
+   *
+   */
+  int _fade_czerwony;
+
+    /*!
+   *\brief Przechowuje wartość koloru czerwonego dla funkcji Fade()
+   *
+   */
+  int _fade_zielony;
+
+    /*!
+   *\brief Przechowuje wartość koloru czerwonego dla funkcji Fade()
+   *
+   */
+  int _fade_niebieski;
+
+    /*!
+   *\brief Przechowuje licznik dla funkcji Fade()
+   *
+   */
+  int _licznik;
 
 public:
 
@@ -91,14 +119,8 @@ public:
 
   void NegujStan();
 
-  /*NIE UŻYWAĆ I USUNĄĆ CHYBA*/
-
-  void Fade(const int czas);
+  void Fade();
   
-  void Fade2(const int czas);
-
-  void Fade3(const int czas);
-
   void test1(const int czas);
 
  

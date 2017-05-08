@@ -5,7 +5,7 @@
 
 
   Pasek p1;
-  Wejscia w1(4,6);
+  Wejscia w1(2,6);
 
 void setup() 
 {
@@ -26,8 +26,14 @@ void loop()
     if(analogRead(A0) < 500)            //Podałączono zewnętrzyn kontroler
     {
       w1.Sprawdz(4,p1);
-      //Serial.println(w1.TrybZ());
-      
+      w1.Sprawdz(3,p1);
+     
+     if(!p1.Stan())
+     {
+      p1.PiszNaPasek(zero);
+     }       
+     else
+     {
       switch(w1.TrybZ())
       {
           case 0 :
@@ -42,27 +48,41 @@ void loop()
             }
           case 2 :
             {
-              p1.PiszNaPasek(zero);
+              p1.Fade();
               break;
             }
-          case 3 : 
-            {
-              p1.PiszNaPasek(green);
-              break;
-            }
-      }      
+      }   
+     }   
     }
     else                                //Odłączony kontroler
     {
       w1.Sprawdz(1,p1);
+      w1.Sprawdz(2,p1);
+
 
       if(digitalRead(7))
-      {
-        p1.PiszNaPasek(strOliwia[w1.TrybW()]);
+      { 
+
+        if(!p1.Stan())
+        {
+          p1.PiszNaPasek(zero);
+        }
+        else      
+        {
+          p1.PiszNaPasek(str[w1.TrybW()]);
+        }
+
       }
       else
       {
-        p1.PiszNaPasek(str1[w1.TrybW()]);
+        if(!p1.Stan())
+        {
+          p1.PiszNaPasek(zero);
+        }
+        else      
+        {
+          p1.Fade();
+        }
       }
 
     }
